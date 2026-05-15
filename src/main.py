@@ -7,6 +7,7 @@ def multiply_numbers( a, b ):
     return result
 
 def is_even(number):
+  """Перевіряє парність числа"""
   if number%2==0:
     return True
   else:

@@ -62,7 +62,7 @@ jobs:
           export PATH=$PATH:$(pwd)/sonar-scanner-4.8.0.2856-linux/bin
           sonar-scanner
         continue-on-error: true
-
+        
       - name: Запуск flake8 через Reviewdog
         uses: reviewdog/action-flake8@v2
         with:
@@ -76,3 +76,11 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           reporter: github-pr-review
           level: info
+
+      - name: Перевірка змін у гілці develop
+        run: |
+          git fetch origin develop
+          git checkout develop
+          git pull origin develop
+          git log --oneline --graph > develop_changes.txt
+          cat develop_changes.txt

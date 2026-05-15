@@ -2,8 +2,8 @@ def add_numbers(a, b):
     """Функція для додавання двох чисел."""
     return a + b
 
-def multiply_numbers( a, b ):
-    
+def multiply_numbers(a, b):
+    """Функція для множення двох чисел."""
     result=a*b
     return result
 
